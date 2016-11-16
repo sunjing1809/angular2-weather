@@ -1,0 +1,72 @@
+<br>
+
+<div class="submission">
+         <h1>Weather Search</h1>
+        <form action="#" class="form-inline">
+           <div class="form-group">
+               <label for="location">Location</label>
+            <input #term (keyup)="search(term.value)" type="text" id = "location" class="form-control" placeholder="Find your location...">        
+
+            <!-- <input type="submit" value="Find"> -->
+            </div>
+        </form>    
+     
+</div>
+
+
+  <br>
+
+    <div *ngIf="isVisible">
+
+        <div class= "submission">
+            <h2><i class=icon-{{items.query?.results?.channel?.item?.condition?.code}}></i>
+            {{ items.query?.results?.channel?.item?.condition?.temp }}&deg; F
+
+            </h2>
+
+            <ul>
+                <li>
+                    {{ items.query?.results?.channel?.location?.city }}, {{ items.query?.results?.channel?.location?.region }}, {{ items.query?.results?.channel?.location?.country }}
+                </li>
+
+                <li>
+                    {{ items.query?.results?.channel?.item?.condition?.date.slice(0,16) }}
+
+                </li>
+
+                 <li>
+                      {{ items.query?.results?.channel?.item?.condition?.text }}
+                    
+                </li>
+            </ul>
+            <!--<div class="row">
+                <div class="col-xs-3">Location</div>
+                <div class="col-xs-9  pull-left"> {{ items.query?.results?.channel?.location?.city }}, {{ items.query?.results?.channel?.location?.region }}, {{ items.query?.results?.channel?.location?.country }}</div>
+            </div>
+        <div class="row">
+            <div class="col-xs-3">Current Degree</div>
+            <div class="col-xs-9  pull-left"> {{ items.query?.results?.channel?.item?.condition?.temp }}<sup>o</sup>F</div>
+        </div>
+            <div class="row">
+                <div class="col-xs-3">Current Date</div>
+                <div class="col-xs-9  pull-left"> {{ items.query?.results?.channel?.item?.condition?.date }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">Description</div>
+                <div class="col-xs-9  pull-left"> {{ items.query?.results?.channel?.item?.condition?.text }}</div>
+            </div>-->
+            
+
+        </div>
+
+     
+    </div>
+    
+        <div #chart></div>
+
+       
+
+
+
+
+
